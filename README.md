@@ -1,1 +1,1 @@
-# Getting started with Pipeline
+# Creating a Jenkinsfile
