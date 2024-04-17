@@ -2,10 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('BUILD_ID') {
             steps {
-                sh 'make'
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+                echo "BUILD_ID: ${BUILD_ID}"
             }
         }
     }
