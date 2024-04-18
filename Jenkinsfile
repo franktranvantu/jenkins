@@ -1,13 +1,13 @@
 pipeline {
     agent any
 
-    environment {
+    environment { // Apply to all steps within the Pipeline
         CC = 'clang'
     }
 
     stages {
         stage('Example') {
-            environment {
+            environment { // Only apply the given environment variables to steps within the stage.
                 DEBUG_FLAGS = '-g'
             }
             steps {
