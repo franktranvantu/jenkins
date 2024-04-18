@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('BRANCH_NAME') {
+        stage('Show all environment variables') {
             steps {
                 sh 'env'
             }
