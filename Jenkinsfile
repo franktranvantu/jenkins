@@ -1,13 +1,23 @@
 pipeline {
     agent any
 
-    environment { // Apply to all steps within the Pipeline
-        CC = 'clang'
+    environment {
+        // Using returnStdout
+        CC = """${sh(
+                returnStdout: true,
+                script: 'echo "clang"'
+            )}"""
+        // Using returnStatus
+        EXIT_STATUS = """${sh(
+                returnStatus: true,
+                script: 'exit 1'
+            )}"""
+
     }
 
     stages {
         stage('Example') {
-            environment { // Only apply the given environment variables to steps within the stage.
+            environment {
                 DEBUG_FLAGS = '-g'
             }
             steps {
