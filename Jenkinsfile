@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('BRANCH_NAME') {
             steps {
-                echo "BRANCH_NAME: ${env.BRANCH_NAME}"
+                echo "BRANCH_NAME: ${withEnv.BRANCH_NAME}"
             }
         }
     }
