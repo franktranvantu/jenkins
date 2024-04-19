@@ -6,10 +6,14 @@ pipeline {
     }
 
     stages {
+        stage('Insecure') {
+            steps {
+                sh "curl -u ${EXAMPLE_CREDS_USR}:${EXAMPLE_CREDS_PSW} https://example.com"
+            }
+        }
         stage('Secure') {
             steps {
-                echo '$EXAMPLE_CREDS_USR'
-                echo '$EXAMPLE_CREDS_PSW'
+                sh 'curl -u $EXAMPLE_CREDS_USR:$EXAMPLE_CREDS_PSW https://example.com'
             }
         }
     }
