@@ -12,7 +12,7 @@ pipeline {
                 echo '$AWS_ACCESS_KEY_ID'
             }
         }
-        stage('Example stage 2  ') {
+        stage('Example stage 2') {
             steps {
                 echo '$AWS_SECRET_ACCESS_KEY'
             }
