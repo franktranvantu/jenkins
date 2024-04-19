@@ -9,6 +9,7 @@ pipeline {
         stage('Example') {
             steps {
                 echo "${EXAMPLE_CREDS_USR}"
+                echo "${EXAMPLE_CREDS_PSW}"
             }
         }
     }
