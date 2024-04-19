@@ -1,1 +1,1 @@
-# Setting environment variables dynamically
+# Handling credentials
