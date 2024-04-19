@@ -2,18 +2,19 @@ pipeline {
     agent any
 
     environment {
-        EXAMPLE_CREDS = credentials('example-credentials-id')
+        AWS_ACCESS_KEY_ID = credentials('jenkins-aws-secret-key-id')
+        AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
     }
 
     stages {
-        stage('Insecure') {
+        stage('Example stage 1') {
             steps {
-                sh "curl -u ${EXAMPLE_CREDS_USR}:${EXAMPLE_CREDS_PSW} https://example.com" // Double quotes
+                echo '$AWS_ACCESS_KEY_ID'
             }
         }
-        stage('Secure') {
+        stage('Example stage 2  ') {
             steps {
-                sh 'curl -u $EXAMPLE_CREDS_USR:$EXAMPLE_CREDS_PSW https://example.com' // Single quotes
+                echo '$AWS_SECRET_ACCESS_KEY'
             }
         }
     }
